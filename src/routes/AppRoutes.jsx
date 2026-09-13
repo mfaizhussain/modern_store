@@ -8,6 +8,7 @@ import Shop from '../pages/Shop';
 import ProductDetail from '../pages/ProductDetail';
 import Cart from '../pages/Cart';
 import ErrorPage from '../pages/ErrorPage';
+import ProtectedRoute from './ProtectedRoute';
 import { getProduct, getProducts } from '../api/products';
 
 export const router = createBrowserRouter([
@@ -15,7 +16,7 @@ export const router = createBrowserRouter([
     { index: true, element: <Home />, loader: () => getProducts() },
     { path: 'shop', element: <Shop />, loader: () => getProducts() },
     { path: 'products/:productId', element: <ProductDetail />, loader: ({ params }) => getProduct(params.productId) },
-    { path: 'cart', element: <Cart /> },
+    { element: <ProtectedRoute />, children: [{ path: 'cart', element: <Cart /> }] },
   ] },
   { path: '/auth', element: <AuthLayout />, children: [
     { path: 'login', element: <Login /> }, { path: 'register', element: <Register /> },
