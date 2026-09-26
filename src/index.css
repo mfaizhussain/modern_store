@@ -2,8 +2,6 @@
 @import "tailwindcss";
 @theme { --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif; }
 * { box-sizing: border-box; }
-html, body, #root { min-height: 100%; background: #000; }
-html { font-family: "Inter", ui-sans-serif, system-ui, sans-serif; color-scheme: dark; }
-body { margin: 0; }
+html { font-family: "Inter", ui-sans-serif, system-ui, sans-serif; }
 button, a { -webkit-tap-highlight-color: transparent; }
 .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; line-height: 1; }
